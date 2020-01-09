@@ -8,7 +8,7 @@ module.exports = function(app) {
     .post(todoList.signup);
 
     app.route('/Signin')
-    .get(todoList.userSignin,isAuth);
+    .get(todoList.userSignin);
     
     
 
