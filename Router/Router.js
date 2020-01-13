@@ -10,7 +10,7 @@ module.exports = function(app) {
     .post(todoList.signup);
 
     app.route('/Signin')
-    .get(todoList.userSignin);
+    .post(todoList.userSignin);
     
     app.route('/Singup/:SingupId')
     .get(todoList.read_a_task)
@@ -22,8 +22,6 @@ module.exports = function(app) {
     app.route('/Buyform')
     .get(buyform.get_a_data)
     .post(buyform.update_a_task)
-        
-
-    
+          
         
     };

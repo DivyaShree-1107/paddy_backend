@@ -6,11 +6,11 @@ var isAuth=require('../Middleware/isAuth')
     
 
 exports.get_a_data = function(req, res) {
-  var User = new UserData(req.body);
-  User.find({}, function(err, task1) {
+
+  UserData.find({}, function(err, data) {
   if (err)
     res.send(err);
-    res.json(task1);
+    res.json(data);
   });
 };
 

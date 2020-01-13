@@ -29,7 +29,6 @@ Mobnum:{
     required: true
 }
 
-
 });
 
 module.exports = mongoose.model('Tasks', TaskSchema);

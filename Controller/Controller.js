@@ -57,6 +57,11 @@ exports. signup= function(req, res){
   else {
     res.send('Email is invalid');
   }
+  
+
+  
+ 
+
 };
 
 exports.read_a_task = function(req, res) 
@@ -89,6 +94,7 @@ exports.delete_a_task = function(req, res) {
 
 
 exports.userSignin = (req,res,next) =>{
+  console.log(req.body)
   const Mobnum = req.body.Mobnum;
   const password = req.body.password;
   let loadedUser;
