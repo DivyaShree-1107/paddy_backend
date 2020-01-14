@@ -27,6 +27,9 @@ email:{
 Mobnum:{
     type: Number,
     required: true
+},
+Admin:{
+    type:Boolean,
 }
 
 });
