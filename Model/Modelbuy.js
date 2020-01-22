@@ -36,7 +36,10 @@ AccNumber:{
     type: Number,
     required: true
 },
-
+Email: {
+    type: String,
+    required: 'Please Enter valid emailId'
+    }
 
 });
 

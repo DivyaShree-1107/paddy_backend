@@ -1,6 +1,8 @@
 module.exports = function(app) {
     const todoList = require('../Controller/Controller');
     const buyform = require('../Controller/Controllerbuy');
+    const email = require('../Controller/ControllerEmail');
+
 
      const isAuth=require('../Middleware/isAuth')
     
@@ -25,5 +27,12 @@ module.exports = function(app) {
 
     app.route('/Buyform')
     .post(buyform.get_a_data)
-        
-    };
+    
+
+    app.route('/Email')
+    .post(email.nodemailer1)
+
+};
+
+    
+   
