@@ -15,7 +15,7 @@ exports.get_a_data = function(req, res) {
 };
 
 
-exports. signup= function(req, res){
+exports.signup= function(req, res){
   const reg_email=/^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/;
   const reg_mob=/^[0-9]{10}$/;
   const reg_pwd=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,10}$/;
@@ -75,7 +75,7 @@ exports.read_a_task = function(req, res)
 
 exports.update_a_task = function(req, res)
 {
-  UserData.findOneAndUpdate({_id: req.params.taskId}, req.body, {new: true}, function(err, task) {
+  UserData.findOneAndUpdate({email: req.params.email}, req.body, {new: true}, function(err, task) {
   if (err)
   res.send(err);
   res.json(task);

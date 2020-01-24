@@ -3,6 +3,7 @@ const UserData =require('../Model/Modelbuy');
 const bcrypt =require('bcrypt');
 const jwt = require('jsonwebtoken');
 var isAuth=require('../Middleware/isAuth')
+var nodemailer =require ('nodemailer')
     
 
 exports.get_a_data = function(req, res) {
@@ -26,7 +27,7 @@ console.log(req.params)
 
 exports.update_a_task = function(req, res)
 {
-  var mail = new User(req.body);
+  var mail = new UserData(req.body);
    //mail.save(function(err, data){
 //   // if(err)
 //   // res.send(err.message);
@@ -46,7 +47,7 @@ exports.update_a_task = function(req, res)
     from: 'drudregowdaostb2@gmail.com',
     to: req.body.Email,
     subject: 'Receipt of the Crop Purchase',
-    text: `Hii, we have  credited your account with the respective amount`
+    text: 'Hello, we have  credited your account with the respective amount'+' http://localhost:3000/fpsecond '
   };
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
@@ -54,7 +55,7 @@ exports.update_a_task = function(req, res)
     } else {
       console.log('Email sent: ' + info.response);
       console.log("hai", req.body);
-      var Leavem = new User(req.body);
+      var Leavem = new UserData(req.body);
       Leavem.save(function (err, data) {
         if (err)
           res.send(err);
