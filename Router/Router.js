@@ -13,7 +13,7 @@ module.exports = function(app) {
 
    
     app.route('/reset')
-    .put(todoList.update_a_task)
+    .put(todoList.changepassword)
 
     app.route('/Signin')
     .post(todoList.userSignin);
