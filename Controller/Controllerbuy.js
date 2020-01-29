@@ -47,7 +47,7 @@ exports.update_a_task = function(req, res)
     from: 'drudregowdaostb2@gmail.com',
     to: req.body.Email,
     subject: 'Receipt of the Crop Purchase',
-    text: 'Hello, we have  credited your account with the respective amount'+' http://localhost:3000/fpsecond '
+    text: 'Hello, we have  credited your account with the respective amount '+ req.body.Price
   };
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {

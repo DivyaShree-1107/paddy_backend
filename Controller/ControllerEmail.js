@@ -27,7 +27,7 @@ exports.nodemailer1 = function (req, res) {
             from: 'drudregowdaostb2@gmail.com',
             to: req.body.Email,
             subject: 'Receipt of the Crop Purchase',
-            text: 'Hii, we have  credited your account with the respective amount' + ' http://localhost:3000/login'
+            text: 'Hii, we have  credited your account with the respective amount' + ' http://localhost:3000/fpsecond'
         };
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
@@ -37,8 +37,6 @@ exports.nodemailer1 = function (req, res) {
             }
         });
     })
-    // }
-    // else {
-    // res.send('Email is invalid');
-    // }
-};
+   };
+//     const pwd = cryptr.encrypt(req.body.password);
+// req.body.password = pwd;

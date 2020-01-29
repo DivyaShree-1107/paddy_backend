@@ -29,8 +29,8 @@ module.exports = function(app) {
     .get(buyform.get_a_data)
     .post(buyform.update_a_task);
 
-    // app.route('/Buyform')
-    // .post(buyform.get_a_data)
+    app.route('/Buyform')
+    .post(buyform.get_a_data)
     
 
     app.route('/Email')

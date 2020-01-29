@@ -131,7 +131,7 @@ exports.userSignin = (req,res,next) =>{
       email: loadedUser.email,
       userId:loadedUser._id.toString()
     },'secret')
-    return res.status(200).json({token: token, userId: loadedUser._id.toString(), role: loadedUser.role})
+    return res.status(200).json({token: token, userId: loadedUser._id.toString(), role: loadedUser.role,Firstname:loadedUser.Firstname})
   })
   .catch(err => {
     if (!err.statusCode) {
