@@ -27,7 +27,7 @@ exports.nodemailer1 = function (req, res) {
             from: 'drudregowdaostb2@gmail.com',
             to: req.body.Email,
             subject: 'Receipt of the Crop Purchase',
-            text: 'Hii, we have  credited your account with the respective amount' + ' http://localhost:3000/fpsecond'
+            text: 'Hii, Please click on the link to reset your password ' + ' http://localhost:3000/fpsecond '
         };
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
@@ -38,5 +38,3 @@ exports.nodemailer1 = function (req, res) {
         });
     })
    };
-//     const pwd = cryptr.encrypt(req.body.password);
-// req.body.password = pwd;

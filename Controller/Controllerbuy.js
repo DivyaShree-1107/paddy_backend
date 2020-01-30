@@ -15,23 +15,9 @@ console.log(req.params)
   });
 };
 
-// exports.get_a_data = function(req, res) {
-//   console.log(req.body)
-// UserData.findBy(req.body.RTCNumber, function(err, task) {
-//   if (err)
-//   res.send(err);
-//   res.json(task);
-//   });
-//   };
-
-
 exports.update_a_task = function(req, res)
 {
   var mail = new UserData(req.body);
-   //mail.save(function(err, data){
-//   // if(err)
-//   // res.send(err.message);
-//   // res.json(data);
   var transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
@@ -47,7 +33,7 @@ exports.update_a_task = function(req, res)
     from: 'drudregowdaostb2@gmail.com',
     to: req.body.Email,
     subject: 'Receipt of the Crop Purchase',
-    text: 'Hello, we have  credited your account with the respective amount '+ req.body.Price
+    text: 'Hello Greetings for the day, we have credited your account with respective amount that is Rs. '+ req.body.Price + ' for paddy transaction to the account with the name . Thank you for selling'
   };
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
@@ -65,54 +51,6 @@ exports.update_a_task = function(req, res)
   }
   )
 }
-
-
-
-//    const reg_email=/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
-//   console.log(req.body.Email)
-//   // if(reg_email.test(req.body.email)){
-//   var mail = new nodemailer1(req.body.mail);
-//   mail.save(function(err, data){
-//   if(err)
-//   res.send(err.message);
-//   res.json(data);
-//   var transporter = nodemailer.createTransport({
-//   host: 'smtp.gmail.com',
-//   port: 587,
-//   secure: false,
-//   requireTLS: true,
-  
-//   auth: {
-//   user:'drudregowdaostb2@gmail.com',
-//   pass:'divya9108170632'
-//   }
-//   });
-//   mailOptions = {
-//   from: 'drudregowdaostb2@gmail.com',
-//   to: req.body.Email,
-//   subject: 'Receipt of the Crop Purchase',
-//   text: `Hii, we have  credited your account with the respective amount`
-//   };
-//   transporter.sendMail(mailOptions, (error, info)=>{
-//   if (error) {
-//   return console.log(error.message);
-//   } else {
-//     var User = new UserData(req.body);
-//     User.save({},function(err, data) {
-//     if (err)
-//     res.send(err);
-//     res.json(data);
-//     });
-   
-//   console.log('Email sent: ' + info.response);
-//   }
-//   });
-//   })
-
-
-
- 
-// };
 
 
 
